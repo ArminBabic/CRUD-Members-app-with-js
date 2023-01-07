@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="Description" content="Enter your description here" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-lg-12">
+        
+        </div>
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <form id="form">
+                 
+                <input type="hidden" name="id" id="id"/>
+
+                 <label for="ID">ID</label>
+                <input
+                  type="text"
+                  placeholder="ID"
+                  class="form-control"
+                  name="ID"
+                  id="ID"
+                  required
+                />
+                <br />
+               
+                <label for="name">Ime i Prezime</label>
+                <input
+                  type="text"
+                  placeholder="Ime i Prezime"
+                  class="form-control"
+                  name="name"
+                  id="name"
+                  required
+                />
+                <br />
+                <label for="age">Godina rodjenja</label>
+                <input
+                  type="number"
+                  placeholder="Godina rodjenja"
+                  class="form-control"
+                  name="age"
+                  id="age"
+                  required
+                />
+                <br />
+                <label for="">Email</label>
+                <input
+                  name="address"
+                  placeholder="Email"
+                  id="address"
+                  cols="30"
+                  required
+                  class="form-control"
+                ></input>
+                <br />
+                <label for="">Vrsta Clana</label>
+                <fieldset id="options">
+    <input type="radio" value="regularni" name="group1" id="regularni" >
+    <label for="regularni">regularni</label>
+    <input type="radio" value="povlasceni" name="group1" id="povlasceni">
+    <label for="povlasceni">povlasceni</label>
+  </fieldset>
+                <br />
+                <button
+                  class="btn btn-sm btn-primary"
+                  type="button"
+                  onclick="save()"
+                >
+                  Save
+                </button>
+                <button
+                  class="btn btn-sm btn-primary"
+                  type="button"
+                  onclick="clearData()"
+                >
+                  Reset
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="card">
+            <div class="card-body">
+              <div class="table-responsive">
+                <table id="datatable" class="table table-striped">
+                  <thead>
+                    <tr>
+                     
+                      <th>ID</th>
+                      <th>Ime i Prezime</th>
+                      <th>Godina rodjenja</th>
+                      <th>Email</th>
+
+                      <th>Vrsta Clana</th>
+                      <th>Clanarina</th>
+
+                      <th>Uredi</th>
+                      <th>Izbrisi</th>
+                    </tr>
+                  </thead>
+                  <tbody id="table"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <script src="all_data.js"></script>
+    <script src="save.js"></script>
+    <script src="find.js"></script>
+    <script src="remove.js"></script>
+    <script>
+      allData();
+    </script>
+    <script>
+      function clearData() {
+        document.getElementById("form").reset();
+        document.getElementById("id").value = "";
+      }
+    </script>
+  </body>
+</html>
