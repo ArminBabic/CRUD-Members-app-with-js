@@ -15,6 +15,7 @@
     />
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css"/>
   </head>
   <body>
     <div class="container mt-4">
@@ -38,6 +39,7 @@
                   id="ID"
                   required
                 />
+                 <p class="ID-error">Molimo unesite autentican ID</p>
                 <br />
                
                 <label for="name">Ime i Prezime</label>
@@ -49,6 +51,7 @@
                   id="name"
                   required
                 />
+                <p class="name-error">Molimo unesite Ime i Prezime</p>
                 <br />
                 <label for="age">Godina rodjenja</label>
                 <input
@@ -59,6 +62,7 @@
                   id="age"
                   required
                 />
+                <p class="year-error">Godinja rodjenja ne moze biti negativna ili veca od 2023 </p>
                 <br />
                 <label for="">Email</label>
                 <input
@@ -69,6 +73,7 @@
                   required
                   class="form-control"
                 ></input>
+                <p class="email-error">Email mora sadrzavati @</p>
                 <br />
                 <label for="">Vrsta Clana</label>
                 <fieldset id="options">
@@ -77,21 +82,23 @@
     <input type="radio" value="povlasceni" name="group1" id="povlasceni">
     <label for="povlasceni">povlasceni</label>
   </fieldset>
+        <p class="type-error">Molimo izaberite vrstu clana</p>
+
                 <br />
+                <div class="container">
+      <h4 class="time">00:00</h4>
+    </div>
+    <p class="brojevi"></p>
+    <input  class="inputfield" />
+                <br/>
                 <button
                   class="btn btn-sm btn-primary"
                   type="button"
                   onclick="save()"
                 >
-                  Save
+                  Dodaj Clana
                 </button>
-                <button
-                  class="btn btn-sm btn-primary"
-                  type="button"
-                  onclick="clearData()"
-                >
-                  Reset
-                </button>
+            
               </form>
             </div>
           </div>

@@ -1,28 +1,32 @@
-body {
-  background-color: rgb(128, 128, 152);
-  color: white;
+.email-error {
+  display: none;
+  color: rgb(205, 92, 92);
+  font-weight: 500;
 }
-
-table {
-  border-color: white;
+.year-error {
+  display: none;
+  color: rgb(205, 92, 92);
+  font-weight: 500;
 }
-
-td {
-  padding: 8px 16px;
+.name-error {
+  display: none;
+  color: rgb(205, 92, 92);
+  font-weight: 500;
 }
-
-.col {
-  font-weight: bold;
-  font-size: 18px;
-  background-color: rgb(191, 192, 193);
+.ID-error {
+  display: none;
+  color: rgb(205, 92, 92);
+  font-weight: 500;
 }
-
-tr {
-  background-color: rgb(226, 234, 236);
-  color: black;
-  text-align: center;
+.type-error {
+  display: none;
+  color: rgb(205, 92, 92);
+  font-weight: 500;
 }
-
-input {
-  font-size: 16px;
+.time {
+  background-color: red;
+  display: none;
+}
+.inputfield {
+  display: none;
 }
