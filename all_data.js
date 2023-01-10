@@ -88,12 +88,18 @@ function save() {
   } else {
     let str = document.getElementById("name").value;
 
-    if (document.getElementById("ID").value === "") {
-      document.querySelector(".ID-error").style.display = "block";
-      return;
-    } else {
-      document.querySelector(".ID-error").style.display = "none";
-    }
+    contactList.forEach((value) => {
+      if (
+        document.getElementById("ID").value === "" ||
+        document.getElementById("ID").value === value.ID
+      ) {
+        document.querySelector(".ID-error").style.display = "block";
+        return;
+      } else {
+        document.querySelector(".ID-error").style.display = "none";
+      }
+    });
+
     if (str.trim().indexOf(" ") != -1) {
       document.querySelector(".name-error").style.display = "none";
     } else {
