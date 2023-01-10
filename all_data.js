@@ -86,17 +86,19 @@ function save() {
 
     ////////////////////
   } else {
+    let str = document.getElementById("name").value;
+
     if (document.getElementById("ID").value === "") {
       document.querySelector(".ID-error").style.display = "block";
       return;
     } else {
       document.querySelector(".ID-error").style.display = "none";
     }
-    if (document.getElementById("name").value.length < 6) {
+    if (str.trim().indexOf(" ") != -1) {
+      document.querySelector(".name-error").style.display = "none";
+    } else {
       document.querySelector(".name-error").style.display = "block";
       return;
-    } else {
-      document.querySelector(".name-error").style.display = "none";
     }
 
     if (
@@ -168,19 +170,15 @@ function save() {
     if (!inputValue == "") {
       switch (operatorsPicker) {
         case 0:
-          console.log(number1 + number2);
           result = number1 + number2;
           break;
         case 1:
-          console.log(number1 - number2);
           result = number1 - number2;
           break;
         case 2:
-          console.log(number1 * number2);
           result = number1 * number2;
           break;
         case 3:
-          console.log(number1 / number2);
           result = number1 / number2;
           break;
       }
