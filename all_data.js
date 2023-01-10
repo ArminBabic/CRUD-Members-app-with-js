@@ -61,6 +61,7 @@ function save() {
     } else if (document.getElementById("povlasceni").checked) {
       optionType = document.getElementById("povlasceni").value;
     }
+    return optionType;
   };
   checkType();
 
@@ -77,8 +78,7 @@ function save() {
           (value.name = document.getElementById("name").value),
           (value.age = document.getElementById("age").value),
           (value.address = document.getElementById("address").value);
-        value.regularni = document.getElementById("regularni").checked;
-        value.povlasceni = document.getElementById("povlasceni").checked;
+        value.options = optionType;
       }
     });
 
