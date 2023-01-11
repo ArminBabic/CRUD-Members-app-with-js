@@ -10,16 +10,70 @@ function clearData() {
   document.getElementById("id").value = "";
 }
 
+var table = document.getElementById("table");
+
 function allData() {
   table.innerHTML = ``;
   //get data from localstorage and store to contaclist array
   //we must to use JSON.parse, because data as string, we need convert to array
 
+  let defaultMembers = [
+    {
+      id: "a",
+      ID: "1",
+      name: "Prvi Clan",
+      age: 2000,
+      address: "primjer1@gmail.com",
+      options: "regularni",
+      membership: "3000",
+    },
+    {
+      id: "b",
+      ID: "2",
+      name: "Drugi Clan",
+      age: 1990,
+      address: "primjer2@gmail.com",
+      options: "povlasceni",
+      membership: "2400",
+    },
+    {
+      id: "c",
+      ID: "3",
+      name: "Treci Clan",
+      age: 2003,
+      address: "primjer3@gmail.com",
+      options: "regularni",
+      membership: "3000",
+    },
+  ];
+  //var defaultTable = document.getElementById("default");
+  defaultMembers.forEach((value, i) => {
+    table.innerHTML += `
+                    <tr>
+                        
+                        <td>${value.ID}</td>
+                        <td>${value.name}</td>
+                        <td>${value.age}</td>
+                        <td>${value.address}</td>
+                        <td>${value.options}</td>
+                        <td>${value.membership}</td>
+                        <td>
+                            <button class="btn btn-sm btn-success" onclick="find(${value.id}) " disabled>
+                                <i class="fa fa-edit"></i>
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-sm btn-danger" onclick="removeData(${value.id}) " disabled>
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>`;
+  });
+
   contactList = JSON.parse(localStorage.getItem("listItem")) ?? [];
 
   //looping data and show data in table
   contactList.forEach(function (value, i) {
-    var table = document.getElementById("table");
     let membership;
 
     if (value.options === "regularni") {
