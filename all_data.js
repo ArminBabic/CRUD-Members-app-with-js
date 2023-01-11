@@ -141,12 +141,19 @@ function save() {
     ////////////////////
   } else {
     let str = document.getElementById("name").value;
-
+    if (
+      document.getElementById("ID").value === "" ||
+      document.getElementById("ID").value === "1" ||
+      document.getElementById("ID").value === "2" ||
+      document.getElementById("ID").value === "3"
+    ) {
+      document.querySelector(".ID-error").style.display = "block";
+      return;
+    } else {
+      document.querySelector(".ID-error").style.display = "none";
+    }
     contactList.forEach((value) => {
-      if (
-        document.getElementById("ID").value === "" ||
-        document.getElementById("ID").value === value.ID
-      ) {
+      if (document.getElementById("ID").value === value.ID) {
         document.querySelector(".ID-error").style.display = "block";
         return;
       } else {
